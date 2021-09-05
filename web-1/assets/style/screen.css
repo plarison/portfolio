@@ -1,1 +1,97 @@
+html {
+	max-width: 800px;
+	margin: auto;
 
+}
+head {
+	margin: 0;
+	border: 0;
+}
+body {
+	background-image: url('../images/webpage-background.jpg');
+	background-repeat: repeat-x;
+	background-size: cover;
+  	background-color: black;
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	min-width: 800px;
+}
+div {
+	background-color: white;
+	border-style: solid;
+	border-color: white;
+	padding: 20px;
+	padding-top: 0;
+}	
+p {
+	color: black;
+	font-size: 108%;
+}
+
+h1 {
+	font-weight: bold;
+	color: blue;
+	margin-bottom: 0;
+	padding-bottom: 0;
+} 
+h2 {
+	color: blue;
+	margin-bottom: 0;
+	padding-bottom: 0;
+} 
+h3 {
+	color: #808b96;
+} 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 115%;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change nav link color to gray on hover */
+li a:hover {
+  background-color:  #b3b6b7;
+}
+
+#img_blueprint {
+	position: relative;
+	float: right;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	margin: 20px;
+	margin-top: 0;
+	
+}
+
+#footnote {
+	color: white;
+	font-size: 80%;
+	text-indent: 20px;
+	margin: 0;
+	padding: 5px;
+}
+
+#pgrey {
+	color:  #808b96;
+}
+
+.ptop {
+	margin-top: 0;
+}
