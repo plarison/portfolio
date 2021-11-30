@@ -3,170 +3,83 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Paul Larison - Student Portfolio</title>
-    <meta name="description" content="Stuff I've done in school">
-    <meta name="keywords" content="HTML, CSS"> <!-- Add tags as content increases -->
-    <meta name="author" content="Paul Larison">
+    <title>Your Title</title>
+    <meta name="description" content="Your Description">
+    <meta name="keywords" content="Your, Key, Words">
+    <meta name="author" content="Your Name">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/style/studentportfolio.css">
 	
 	<style>
-	.split      { display:block;margin:10px;}
-	.split span { display:block;float:right;width:50%;margin-left:10px;}
-	.split-wide      { display:block;margin:10px;}
-	.split-wide span { display:block;float:right;width:50%;margin-right:10px;text-align:right;}
+	body {background-color: #bebebe;}
 	</style>
 </head>
 
 <body>
     <div id="container">
-        <h1>Portfolio of Paul Larison</h1>
+        <h1>Work Examples</h1>
 
         <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Profile</button>
-            <button class="tablinks" onclick="openTab(event, 'Resume')">Resume</button>
-            <!-- <button class="tablinks" onclick="openTab(event, 'Skills')">Skills</button> -->
-            <button class="tablinks" onclick="openTab(event, 'Education')">Academic Achievements</button>
-            <!-- <button class="tablinks" onclick="openTab(event, 'Accomplishments')">Accomplishments</button> -->
-            <button class="tablinks" onclick="openRedirect('workexamples.html')">Work Examples</button>
-            <button class="tablinks" onclick="openTab(event, 'CoverLetter')">Cover Letter</button>
-            <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+            <button class="tablinks" onclick="openTab(event, 'Writing')" id="defaultOpen">Writing</button>
+            <button class="tablinks" onclick="openTab(event, 'WebProject')">Web Project</button>
+            <button class="tablinks" onclick="openTab(event, 'Database')">Database</button>
+            <button class="tablinks" onclick="openTab(event, 'Programming')">Programming</button>
+            <button class="tablinks" onclick="openTab(event, 'SoftSkills')">Soft Skills</button>
+            <button class="tablinks" onclick="openTab(event, 'Capstone')">Capstone Project</button>
+            <button class="tablinks" onclick="openRedirect('index.html')">Home</button>
         </div>
 
-        <!-- Begin Home Section -->
-        <div id="Home" class="tabcontent">
-              <h2>Profile</h2>
-            <p>I am a former systems administrator working to transition to a career in Information Science and/or Security.  I am currently a full-time 
-                Information Science student participating in the accelerated BS to MS program in UALR’s Information Science Department.  My short term goal
-                is to find a part time job that can transition to a full time position once I earn my Master’s degree in the spring of 2023.  I then intend
-                to pursue a PhD on a part-time basis.  My long term goal is to combine my knowledge of information systems, business processes, cybersecurity
-                and data science to become a versatile IS professional capable of adapting to changing conditions as needed.</p>
+        <div id="Writing" class="tabcontent">
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/writing-1/Larison-Persuasive Report.pdf">Writing Example 1<a></h2>
+			  <p>This is a “persuasive letter” written as an assignment for my professional writing course.  It is essentially an academic report about modernizing a municipal trash fleet.  I have no special interest in waste collection; I just enjoy learning about complex systems.</p>
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/writing-2/MarketingPaper.pdf">Writing Example 2<a></h2>
+			  <p>This is my Final paper from the marketing course I took last summer.   It is an analysis of the marketing campaigns that helped D&D reclaim its spot as the king of tabletop RPGs.  I do play games like this as a hobby, so it was interesting to explore the factors that have made this one so much more popular than its many competitors.</p>
         </div>
 
-        <!-- Begin Skills Section -->
-        <!-- <div id="Skills" class="tabcontent">
-            <h2>Skills</h2>
-        </div> -->
-
-        <div id="Education" class="tabcontent">
-          <h2>Academic Achievements</h2>
-		  <p class="split"><b> University of Arkansas Little Rock <span> University of Arkansas Community College at Morrilton </span></b>
-			Fall 2020 - Present <span> Fall 2007 - Spring 2009 </span>
-			Currrent GPA: 3.92 <span> Honor Graduate, 3.53 GPA </span>
-			Expected Graduation, Bachelor's: Spring 2022 <span> 2-year president of the Computer Club </span>
-			Expected Graduation, Master's:  Spring 2023 
-			Chancellor's List, Fall 2020
-			Dean's List:  Fall 2020, Spring 2021
-		  <p>
+        <div id="WebProject" class="tabcontent">
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/web-1/index.html">Web Project 1<a></h2>
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/web-2/JSHW15.html">Web Project 2<a></h2>
         </div>
 
-        <!-- <div id="Accomplishments" class="tabcontent">
-            <h2>Accomplishments</h2>
-        </div>    -->     
-        
-        <!-- Begin Skills Section -->
-        <div id="Resume" class="tabcontent">
-            &#40;<a target="_blank" href="https://plarison.github.io/portfolio/resume/Larison-Resume-Generic.pdf">Download PDF version here<a>&#41;
-            <h2 style="text-align:center;">Paul Thomas Larison, II</h2>
-            <p style="text-align:center;">North Little Rock, AR 72118 | (501)215-0182 | plarison2@gmail.com</p>
-			<hr>
-            <h3 style="text-align:center;">Career Profile</h3>
-
-			<ul>
-            <li>
-                Former systems administrator working to transition to a career in Cybersecurity and/or Data Science
-            </li>
-            <li>
-                Seeking a position in information security or data science in an ambitious and expanding company
-            </li>
-			<li>
-                Full-time Information Science student participating in UALR’s accelerated BS to MS program
-            </li>
-			<li>
-                Master of Science in Information Science expected in spring 2023 
-            </li>
-            </ul>
-			
-			<hr>
-            <h3 style="text-align:center;">Technical Skills</h3>
-			<ul>
-            <li>
-			Languages:    Java, Javascript, HTML/CSS, Python, Powershell, Visual Basic, SQL, XML
-			</li>
-			<li>
-			Software:    Active Directory (ADDS, ADFS, ADCS), Hyper-V, Exchange, MS SQL, MS Office
-			</li>
-			<li>
-			Networking:    Routers, switches, wireless bridges, VPNs,  firewalls
-			</li>
-			<li>
-			Operating Systems:    Microsoft Server, Microsoft Windows, Linux
-			</li>
-			</ul>
-			
-			<hr>
-			<h3 style="text-align:center;">Certifications</h3>
-			<p class="split">CompTIA Security+ <span>CompTIA A+</span><br>
-			CompTIA Network+ <span>MCSA: Windows Server 2012</span</p>
-			
-			<hr>
-			<h3 style="text-align:center;">Professional Experience</h3>
-
-			<p style="margin-left:10px;"><b>Koontz Electric Company, Inc,</b> Morrilton, Arkansas – www.koontzelectric.com<br>
-			<i>Information Systems Administrator</i>, June 2009- Sept. 2018 (ADDS, Hyper-V, Exchange, MS SQL, Cisco) </p>
-			
-			<ul>
-			<li>
-			Managed IT infrastructure for a specialty electrical construction contractor with 140 employees
-			</li>
-			<li>
-			Responsible for connectivity and information security for 3 office buildings and dozens of remote workers at a variety of job sites around the country
-			</li>
-			<li>
-			Planned and implemented numerous IT projects, ranging from server clusters to VoIP systems
-			</li>
-			<li>
-			Managed a server room that grew from 5 to 15 physical and virtual servers running Microsoft Server and Linux
-			</li>
-			<li>
-			Managed cloud services and storage including Amazon Web Services and Google Compute
-			</li>
-			<li>
-			Assisted in the creation and maintenance of the Disaster Recovery Plan
-			</li>
-			<li>
-			Responsible for day-to-day end user support
-			</li>
-			</ul>
-
-			<hr>
-			<h3 style="text-align:center;">Education</h3>
-				<p class="split-wide"><i>University of Arkansas at Little Rock</i> <span>Current GPA: 3.92</span><br>
-				Master of Science in Information Science <span>Anticipated 5/2023</span><br>
-				Bachelor of Science in Information Science <span>Anticipated 5/2022</span></p>
-			
-				<p class="split-wide"><i>University of Arkansas Community College at Morrilton</i> <span>GPA: 3.53</span><br>
-				Associate of Applied Science in Computer Information Systems <span>2009</span></p>
-
-			<hr>
-			<h3 style="text-align:center;">Professional Interests</h3>
-			<p class="split">Project Management<span>Systems Analysis and Design</span><br>
-				Business Processes<span>Database Design</span><br>
-				Information Security<span>Data Mining</span><br>
-				Information Privacy<span>Machine Learning</span><br>
-				Information Systems Governance<span>Object-Oriented Technology</span>
-			</p>
+        <div id="Database" class="tabcontent">
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/database-1/Larison-PaperReviewDBdiagram.pdf">Database Project 1<a></h2>
+			  <p>This is an entity relationship diagram for an academic paper review database.</p>
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/database-2/Larison-SQLAssignment3.pdf">Database Project 2<a></h2>
+			  <p>Since returning to school, my database classes have generated little in the way of interesting homework.  
+			  Fortunately I was able to find an old work project in the depths of my hard drive.  
+			  It is an MS Access database that used ODBC to connect to our ERP and document systems in order to generate employee resumes that were attached to construction bids.  
+			  I created everything in this project except for the ODBC tables.  It does not function outside of that company’s network, 
+			  but I was able to retrieve a screenshot of the table relationships and the resume assembly form.  
+			  I also retrieved some of my custom code, which is available in my programming examples.</p>
 
         </div>
-        
-        <div id="CoverLetter" class="tabcontent">
-            <h2>Letter of Introduction</h2>
+
+        <div id="Programming" class="tabcontent">
+              <h2>Programming Project 1</h2>
+			  <p>This is the custom code for the resume generator shown in the database tab.  I created this around 7 years ago, and it is an excellent example of why comments are important.</p>
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/web-1/index.html">Programming Project 2<a></h2>
+			  <p>This is my semester project from my Human-Computer Interface course.  It’s a bit buggy, as I stopped refining it when that semester ended, 
+			  but it does demonstrate my ability to create coherent, well-commented code.</p>
         </div>
 
-        <div id="Contact" class="tabcontent">
-            <h2>Contact Me</h2>
-        </div>    
-</div>
+        <div id="SoftSkills" class="tabcontent">
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/soft-skills-1/Larison-7360Presentation.mp4">Soft Skills Project 1<a></h2>
+			  <p>This is my Final presentation for my Data Privacy and Protection class.  It covers my first year plan as Chief Privacy Officer for a fictional drone delivery company 
+			  named Tinkerbell Aerial Freight and its datacenter subsidiary Arachnid, followed by a pair of breach scenarios.  I don’t usually power through a presentation as rapidly 
+			  as I do here; I needed to stay near the 5-minute mark and I had a lot of ground to cover in that time.</p>
+
+              <h2><a target="_blank" href="https://plarison.github.io/portfolio/soft-skills-2/Larison-BaggageSystem.pdf">Soft Skills Project 2<a></h2>
+			  <p>This is the slide deck for one of my System Analysis and Design projects.  I’ll update this to my final project for that class once it is complete.
+				For now this serves as an example of what a more normally paced presentation looks like.</p>
+        </div>
+
+        <div id="Capstone" class="tabcontent">
+              <h2>Capstone Project 1</h2>
+			  <p>This is the proposal and design of a mobile-first website designed to showcase musicians with ties to Arkansas.</p>
+        </div>
+
+    </div>
 <script type="text/javascript" src="assets/scripts/index.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </body>
 </html>
