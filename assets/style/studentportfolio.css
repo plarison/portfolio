@@ -35,6 +35,12 @@ p {
 
 /* tabs */
 
+/*center the tabs*/
+.center {
+    overflow: hidden;
+    margin: auto;
+}
+
 /* Style the tab */
 .tab {
     overflow: hidden;
