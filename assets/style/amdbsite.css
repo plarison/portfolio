@@ -1,0 +1,216 @@
+/*  body */
+	
+html {
+    height: 100%;
+}
+	
+	body {
+		background-image: url("../images/riverfrontBackground.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center; 
+		background-size:cover;
+		background-color: black;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 90vh;
+  margin-right: auto;
+  margin-left: auto;
+  color: white;
+  text-align: center;  
+}
+
+
+.screen .row {
+  
+}
+
+.screen .row.header {
+  flex: 0 1 auto;
+  /* Shorthand for: flex-grow: 0, flex-shrink: 1, flex-basis: auto */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.screen .row.frontpage {
+  flex: 1 1 auto;
+  /*background: rgba(0, 0, 0, 0.5); */
+}
+
+.screen .row.namebar {
+  flex: 0 1 auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.screen .row.buttonbar {
+  flex: 0 1 auto;
+}
+
+.screen .row.albumpicker {
+  flex: 0 1 auto;
+}
+
+
+.screen .row.content {
+  flex: 1 1 auto;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.screen .row.content p {
+	color: rgba(255, 255, 255, 1);
+	
+}
+
+.screen .row.about {
+  flex: 0 1 auto;
+  
+}
+
+.screen .row.footer {
+  flex: 0 0 auto;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  color: white;
+  text-align: right;
+  font-size: 0.7em;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+col {
+	
+}
+
+#sidecol {
+	width: 25%; 
+	padding: 10%;
+}
+
+#centercol {
+	width: 50%;
+}
+
+#welcome {
+	padding-top: 1%;
+	margin: 0; 
+	padding-bottom: 0;
+}
+
+#amdb {
+	margin: 0; 
+	padding: 0;
+}
+	
+.btn-group {
+    overflow: hidden;
+    border: none;
+    /*background-color: #514b50;
+	color: rgba(81, 75, 80, 1);*/
+}
+
+.btn-group button {
+    background-color: rgba(81, 75, 80, .9);
+    float: left;
+    outline: none;
+	border: none;
+    cursor: pointer;    
+    transition: 0.3s;
+	color: black;
+    font-size: 1.3em;
+	text-align: center;
+	vertical-align: center;
+	font-weight: bold;
+	height: 45px;
+	width: 33.33%
+}
+
+#centerbutton {
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+
+
+
+/* Change background color of buttons on hover */
+.btn-group button:hover {
+    background-color: rgba(140, 140, 140, .9);
+}
+
+/* Create an active/current tablink class */
+.btn-group button.active {
+   /* background-color: #ffffff; */
+}
+
+
+#activeAlbum {
+	max-width: 80%;
+	height: auto;
+	
+	bottom:0;
+}
+
+#switchAlbumCover {
+	max-width: 80%;
+	height: auto;
+	margin: 2%;
+	margin-top:5%;
+}
+
+#switchAlbumArrow {
+	max-width: 80%;
+	height: auto;
+	margin: 2%;
+}
+
+#displayPaneImage {
+	max-width: 100%;
+	height: auto;
+}
+
+#displayPane {
+	overflow: scroll;
+}
+
+
+@media screen and (min-width: 90vh) {
+	body {
+		background-size: auto 100%;
+	}
+	div.screen {
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+	}
+	
+	#sidecol {
+	width: 33%; 
+	padding: 10%;
+	}
+	#centercol {
+		width: 33%;
+	}
+	#switchAlbumCover {
+	max-width: 40%;
+	height: auto;
+	margin: 2%;
+	margin-top:5%;
+	}
+
+	#switchAlbumArrow {
+	max-width: 40%;
+	height: auto;
+	margin: 2%;
+	}
+}
