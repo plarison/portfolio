@@ -32,7 +32,12 @@ a:link {
 a:visited {
   color: #cc00ff;
 }
-	
+
+#homelink {
+	color: white; 
+	text-decoration: none;
+	background: rgba(0, 0, 0, 0.5)
+}	
 	
 .overlay {
   height: 100%;
