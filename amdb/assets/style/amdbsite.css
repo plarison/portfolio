@@ -398,7 +398,7 @@ col {
 	table-layout: fixed;
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;	
+	width: 90%;	
 }
 	
 	
@@ -411,36 +411,83 @@ col {
 	}
 
 	#sidecol {
-	width: 33%; 
-	padding: 10%;
+	width: 38%; 
+	padding: 5%;
 	}
 	#centercol {
-		width: 33%;
-	}
-	#nextAlbumCover {
-	width: 40%;
-	height: auto;
-	margin: 2%;
-	margin-top:5%;
-	}
-	
-	#prevAlbumCover {
-	width: 40%;
-	height: auto;
-	margin: 2%;
-	margin-top:5%;
+		width: 24%;
 	}
 
-	#prevAlbumArrow {
-	max-width: 40%;
-	height: auto;
-	margin: 2%;
-	}
 	
-	#nextAlbumArrow {
-	max-width: 40%;
+#activeAlbum {
+	max-width: 70%;
+	height: auto;
+	bottom:0;
+}
+
+#prevAlbumCover {
+	width: 35%;
 	height: auto;
 	margin: 2%;
-	}
+	margin-top:5%;
+	margin-right: 10%;
+}
+
+#prevAlbumArrow {
+	width: 35%;
+	height: auto;
+	margin: 2%;
+	margin-right: 10%;
+	float: left;
+}
+
+#nextAlbumCover {
+	width: 35%;
+	height: auto;
+	margin: 2%;
+	margin-top:5%;
+	margin-left: 10%;
+}
+
+#nextAlbumArrow {
+	width: 35%;
+	height: auto;
+	margin: 2%;
+	margin-left: 10%;
+	float: right;
+}
+
+#prevTrack {
+	width: 35%;
+	height: auto;
+	margin: 2%;
+	margin-top:5%;
+	margin-right: 10%;
+}
+
+#prevTrackArrow {
+	width: 35%;
+	height: auto;
+	margin: 2%;
+	margin-right: 10%;
+	float: left;
+}
+
+#nextTrack {
+	width: 35%;
+	height: auto;
+	margin: 2%;
+	margin-top:5%;
+	margin-left: 10%;
+}
+
+#nextTrackArrow {
+	width: 35%;
+	height: auto;
+	margin: 2%;
+	margin-left: 10%;
+	float: right;
+}
+/* end album picker icons */
 }
 
