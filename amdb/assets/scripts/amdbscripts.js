@@ -138,10 +138,13 @@ function buttonInfoArtist() {
 	}
 	
 	//create contents of display pane
-	let artistInfo = "<img id=\"displayPaneImage\" src=" + a.strArtistWideThumb + " alt=\"Band Image\"> <br>" + 
-		"<p><b>Origin: </b>" + a.strCountry + "<br><b>Genre: </b>" + 
-		a.strGenre + "<br><b>Style: </b>" + a.strStyle + "<br><b>Mood: </b>" + 
-		a.strMood + "<br><b>Active: </b>" + a.intFormedYear + "-" + a.strDisbanded 		
+	let artistInfo = "";
+	if (a.strArtistWideThumb != null) {
+		artistInfo = "<img id=\"displayPaneImage\" src=" + a.strArtistWideThumb;
+	} else {
+		artistInfo = "<img id=\"displayPaneImage\" src=" + a.strArtistBanner;
+	}
+	artistInfo += " alt=\"Band Image\"> <br>" + "<p><b>Origin: </b>" + a.strCountry + "<br><b>Genre: </b>" + a.strGenre + "<br><b>Style: </b>" + a.strStyle + "<br><b>Mood: </b>" + a.strMood + "<br><b>Active: </b>" + a.intFormedYear + "-" + a.strDisbanded 		
 		
 		//Check if band or solo artist
 		if (a.intMembers==1) { 
@@ -191,6 +194,7 @@ function buttonAlbums(){
 		}
 	albumString += "</table>";
 	document.getElementById("displayPane").innerHTML = albumString;
+	document.getElementById("displayPane").scrollTo(0, 0);
 }
 
 function buttonMedia(){
@@ -248,7 +252,7 @@ function buttonMedia(){
 	mediaString = "<h1 style=\"text-align: center;\">Music Videos</h1>" + vidThumbs + "<br><h1 style=\"text-align: center;\">Artist Images</h1><br>" + artistImages;
 	
 	document.getElementById("displayPane").innerHTML = mediaString;
-	
+	document.getElementById("displayPane").scrollTo(0, 0);
 }
 
 function buttonInfoAlbum(z){
@@ -313,6 +317,7 @@ function buttonInfoAlbum(z){
 	let albumInfo = "<p><b>Release: </b>" + a[albumIndex].intYearReleased + "<br><b>Genre: </b>" + a[albumIndex].strGenre + "<br><b>Style: </b>" + a[albumIndex].strStyle + "<br><b>Mood: </b>" + a[albumIndex].strMood + "<br><b>Tempo: </b>" + a[albumIndex].strSpeed + "<br><b>Format: </b>" + a[albumIndex].strReleaseFormat + "<br><b>Record Label:</b>" + a[albumIndex].strLabel + "<br><b>World Sales: </b>" + a[albumIndex].intSales + "<br><b>Album Description: </b><br>" + a[albumIndex].strDescription + "</p>";  
 	
 	document.getElementById("displayPane").innerHTML = albumInfo;
+	document.getElementById("displayPane").scrollTo(0, 0);
 }
 
 
@@ -359,6 +364,7 @@ function buttonArt(){
 	}
 	
 	document.getElementById("displayPane").innerHTML = mediaString;
+	document.getElementById("displayPane").scrollTo(0, 0);
 }
 
 
@@ -454,7 +460,7 @@ async function buttonTracks(){
 	}
 	trackstring += "</tbody></table>"
 	document.getElementById("displayPane").innerHTML = trackstring;
-	
+	document.getElementById("displayPane").scrollTo(0, 0);
 }
 
 function clickTrack(index)  {
@@ -535,7 +541,7 @@ function trackByIndex(z) {
 	document.getElementById("albumpicker").style.display = "block";
 	document.getElementById("albumname").style.display = "block";
 	document.getElementById("albumbar").style.display = "block";
-	document.getElementById("lblAlbumNameTop").style.display = "block";
+	document.getElementById("lblAlbumNameTop").style.display = "none";
 	
 	document.getElementById("nextAlbumCover").style.display = "none";
 	document.getElementById("nextAlbumArrow").style.display = "none";
