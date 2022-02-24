@@ -19,11 +19,21 @@ body {
 }
 div {
 	background-color: white;
+	
+}
+
+.top {
+	border: none; 
+	margin: 0; 
+	padding: 0;
+}
+
+.main {
 	border-style: solid;
 	border-color: white;
 	padding: 20px;
 	padding-top: 0;	
-}	
+}
 p {
 	color: black;
 	font-size: 108%;
