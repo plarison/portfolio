@@ -1,0 +1,242 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 25 11:51:16 2022
+
+@author: Paul
+"""
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+from scipy.stats import pearsonr
+
+#increase output terminal size
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+
+
+workfolder = Path("E:\p.larisonFolders\Documents")
+palette = ['tab:blue', 'tab:green', 'tab:orange', 'tab:red']
+
+#Suppress scientific notation
+pd.set_option('display.float_format', lambda x: '%.5f' % x)
+
+
+df0 = pd.read_csv(workfolder / 'FREDdata.csv')
+df = df0
+df['observation_date'] = np.arange(len(df))+1
+df.set_index('observation_date')
+
+
+df.describe(include='all')
+
+
+
+
+
+plt.plot(df.index, df.CPILFESL, label='CPILFESL')
+plt.plot(df.index, df.CPIAUCSL, label='CPIAUCSL')
+plt.plot(df.index, df.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df.index, df.EMVOVERALLEMV, label='EMVOVERALLEMV')
+plt.plot(df.index, df.BOPTIMP, label='BOPTIMP')
+plt.plot(df.index, df.INDPRO, label='INDPRO')
+plt.legend(bbox_to_anchor=(1.04, 1))
+plt.xlabel('Week Index')
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('Not Normalized')
+plt.figure(figsize=(12,8))
+plt.show()
+
+
+df_maxscale = df.copy()
+for column in df_maxscale.columns:
+    if column != 'observation_date':
+        df_maxscale[column] = df_maxscale[column]  / df_maxscale[column].abs().max()
+
+    
+#plt.plot(df_maxscale.index, df_maxscale.CPILFESL, label='CPILFESL')
+#plt.plot(df_maxscale.index, df_maxscale.CPIAUCSL, label='CPIAUCSL')
+#plt.plot(df_maxscale.index, df_maxscale.CUSR0000SETA02, label='CUSR0000SETA02')
+#plt.plot(df_maxscale.index, df_maxscale.EMVOVERALLEMV, label='EMVOVERALLEMV')
+#plt.plot(df_maxscale.index, df_maxscale.BOPTIMP, label='BOPTIMP')
+#plt.plot(df_maxscale.index, df_maxscale.INDPRO, label='INDPRO')
+#plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.xlabel('Week Index')
+#plt.ylabel('Revenue Collected (Billions)')
+#plt.title('Normalized, Max Scaling')
+#plt.figure(figsize=(12,8))
+#plt.show()    
+
+
+df_minmax = df.copy()
+for column in df_minmax.columns:
+    if column != 'observation_date':
+        df_minmax[column] = df_minmax[column]  / df_minmax[column].abs().max()
+
+    
+plt.plot(df_minmax.index, df_minmax.CPILFESL, label='CPILFESL')
+plt.plot(df_minmax.index, df_minmax.CPIAUCSL, label='CPIAUCSL')
+plt.plot(df_minmax.index, df_minmax.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df_minmax.index, df_minmax.EMVOVERALLEMV, label='EMVOVERALLEMV')
+plt.plot(df_minmax.index, df_minmax.BOPTIMP, label='BOPTIMP')
+plt.plot(df_minmax.index, df_minmax.INDPRO, label='INDPRO')
+plt.legend(bbox_to_anchor=(1.04, 1))
+plt.xlabel('Week Index')
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('Normalized, Max and Min-Max Scaling')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+
+plt.plot(df_minmax.index, df_minmax.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df_minmax.index, df_minmax.EMVOVERALLEMV, label='EMVOVERALLEMV')
+plt.plot(df_minmax.index, df_minmax.BOPTIMP, label='BOPTIMP')
+plt.plot(df_minmax.index, df_minmax.INDPRO, label='INDPRO')
+plt.legend(bbox_to_anchor=(1.04, 1))
+plt.xlabel('Week Index')
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('Removed CPI lines')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+plt.plot(df_minmax.index, df_minmax.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df_minmax.index, df_minmax.BOPTIMP, label='BOPTIMP')
+plt.plot(df_minmax.index, df_minmax.INDPRO, label='INDPRO')
+plt.legend(bbox_to_anchor=(1.04, 1))
+plt.xlabel('Week Index')
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('Removed EMV line')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+
+df_zscore = df.copy()
+for column in df_zscore.columns:
+    if column != 'observation_date':
+        df_zscore[column] = (df_zscore[column] -
+            df_zscore[column].mean()) / df_zscore[column].std()
+
+    
+plt.plot(df_zscore.index, df_zscore.CPILFESL, label='CPILFESL')
+plt.plot(df_zscore.index, df_zscore.CPIAUCSL, label='CPIAUCSL')
+plt.plot(df_zscore.index, df_zscore.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df_zscore.index, df_zscore.EMVOVERALLEMV, label='EMVOVERALLEMV')
+plt.plot(df_zscore.index, df_zscore.BOPTIMP, label='BOPTIMP')
+plt.plot(df_zscore.index, df_zscore.INDPRO, label='INDPRO')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('Normalized, Z-Score')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+
+plt.plot(df_zscore.index, df_zscore.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df_zscore.index, df_zscore.EMVOVERALLEMV, label='EMVOVERALLEMV')
+plt.plot(df_zscore.index, df_zscore.BOPTIMP, label='BOPTIMP')
+plt.plot(df_zscore.index, df_zscore.INDPRO, label='INDPRO')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('Removed CPI lines')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+plt.plot(df_zscore.index, df_zscore.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df_zscore.index, df_zscore.BOPTIMP, label='BOPTIMP')
+plt.plot(df_zscore.index, df_zscore.INDPRO, label='INDPRO')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('Removed EMV line')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+
+plt.plot(df_zscore.index, df_zscore.EMVOVERALLEMV, label='EMVOVERALLEMV')
+plt.plot(df_zscore.index, df_zscore.INDPRO, label='INDPRO')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('EMB & INDPRO')
+plt.figure(figsize=(12,8))
+plt.show()  
+
+plt.plot(df_minmax.index, df_minmax.BOPTIMP, label='BOPTIMP')
+plt.plot(df_minmax.index, df_minmax.INDPRO, label='INDPRO')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('BOP and IND, min-max')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+plt.plot(df_zscore.index, df_zscore.BOPTIMP, label='BOPTIMP')
+plt.plot(df_zscore.index, df_zscore.INDPRO, label='INDPRO')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('BOP and IND, z-score')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+plt.plot(df_zscore.index, df_zscore.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df_zscore.index, df_zscore.BOPTIMP, label='BOPTIMP')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('CUS and BOP, Z-Score')
+plt.figure(figsize=(12,8))
+plt.show()   
+
+plt.plot(df_minmax.index, df_minmax.CUSR0000SETA02, label='CUSR0000SETA02')
+plt.plot(df_minmax.index, df_minmax.BOPTIMP, label='BOPTIMP')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('CUS and BOP, min-max')
+plt.figure(figsize=(12,8))
+plt.show()    
+
+#plt.plot(df_zscore.index, df_zscore.CPILFESL, label='CPILFESL')
+#plt.plot(df_zscore.index, df_zscore.CPIAUCSL, label='CPIAUCSL')
+#plt.xlabel('Week Index')
+#plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+#plt.title('CPILFESL & CPIAUCSL, minmax')
+#plt.figure(figsize=(12,8))
+#plt.show()    
+
+#plt.plot(df_maxscale.index, df_maxscale.CPILFESL, label='CPILFESL')
+#plt.plot(df_maxscale.index, df_maxscale.CPIAUCSL, label='CPIAUCSL')
+#plt.xlabel('Week Index')
+#plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+#plt.title('CPILFESL & CPIAUCSL, maxscale')
+#plt.figure(figsize=(12,8))
+#plt.show()   
+
+
+plt.plot(df.index, df.CPILFESL, label='CPILFESL')
+plt.plot(df.index, df.CPIAUCSL, label='CPIAUCSL')
+plt.xlabel('Week Index')
+plt.legend(bbox_to_anchor=(1.04, 1))
+#plt.ylabel('Revenue Collected (Billions)')
+plt.title('CPILFESL & CPIAUCSL, Not Normalized')
+plt.figure(figsize=(12,8))
+plt.show()   
+
+cpi_pear = pearsonr(df.CPILFESL, df.CPIAUCSL)
+ind_emv_pear = pearsonr(df.EMVOVERALLEMV, df.INDPRO)
+bop_emv_pear = pearsonr(df.EMVOVERALLEMV, df.BOPTIMP)
+ind_emv_pear_z = pearsonr(df_zscore.EMVOVERALLEMV, df_zscore.INDPRO)
+ind_bop_pear = pearsonr(df.BOPTIMP, df.INDPRO)
+ind_cus_pear = pearsonr(df.INDPRO, df.CUSR0000SETA02)
+cus_bop_pear = pearsonr(df.BOPTIMP, df.CUSR0000SETA02)
+
+
+df_minmax.to_excel(workfolder / 'FREDdataNormalMM.xls')
+df_zscore.to_excel(workfolder / 'FREDdataNormalZ.xls')
+
