@@ -1,0 +1,140 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb 19 22:29:30 2022
+
+@author: Paul
+"""
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+import seaborn as sns
+
+workfolder = Path("E:\p.larisonFolders\Documents")
+palette = ['tab:blue', 'tab:green', 'tab:orange', 'tab:red']
+
+#Suppress scientific notation
+pd.set_option('display.float_format', lambda x: '%.5f' % x)
+
+
+df0 = pd.read_excel(workfolder / 'TaxRevenue.xls')
+
+df0 = df0.rename(columns={'Tax (Thousand$)':'Tax', 'geo_code':'State', 'per_idx':'Quarter'})
+df0.head()
+
+df = df0.pivot('Quarter','State','Tax')
+df.head()
+
+df.describe()
+
+
+total = df.sum()
+total.name = 'Total'
+total.head(5)
+
+df_total = df.append(total.transpose())
+df_total.tail(5)
+
+plt.stackplot(df.index, df.values.T)
+plt.xlabel('Consecutive Quarters')
+plt.ylabel('Revenue Collected (Billions)')
+plt.title('Combined Trend For All States')
+#plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+plt.figure(figsize=(8,8))
+
+
+
+
+plt.show()
+
+df2 = df.assign(group=np.arange(len(df)) % 4 + 1 )
+#df2["sum"] = df.sum(axis=1)
+
+plt.bar(df2['group'], df2.AR.T)
+plt.xlabel('Total Revenue by Quarter')
+plt.ylabel('Revenue Collected')
+plt.title('Arkansas Combined Total Quarters')
+#plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+plt.xticks([1, 2, 3, 4])
+plt.figure(figsize=(8,8))
+
+plt.bar(df2['group'], df2.WV.T)
+plt.xlabel('Total Revenue by Quarter')
+plt.ylabel('Revenue Collected')
+plt.title('West Virginia Combined Total Quarters')
+#plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+plt.xticks([1, 2, 3, 4])
+plt.figure(figsize=(8,8))
+
+plt.bar(df2['group'], df2.CA.T)
+plt.xlabel('Total Revenue by Quarter')
+plt.ylabel('Revenue Collected')
+plt.title('California Combined Total Quarters')
+#plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+plt.xticks([1, 2, 3, 4])
+plt.figure(figsize=(8,8))
+
+plt.bar(df2['group'], df2.TX.T)
+plt.xlabel('Total Revenue by Quarter')
+plt.ylabel('Revenue Collected')
+plt.title('Texas Combined Total Quarters')
+#plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+plt.xticks([1, 2, 3, 4])
+plt.figure(figsize=(8,8))
+
+sns.regplot(x = df.index,
+            y = 'AR',
+            data = df)
+plt.show()
+
+sns.regplot(x = df.index,
+            y = 'MD',
+            data = df)
+plt.show()
+
+sns.scatterplot(x = df2.index,
+            y = 'MD',
+            data = df2,
+            hue = 'group',
+            palette=palette
+            )
+plt.show()
+
+sns.scatterplot(x = df2.index,
+            y = 'AR',
+            data = df2,
+            hue = 'group',
+            palette=palette
+            )
+plt.show()
+
+
+###Zoom in with short dataframe
+df_short = df.iloc[70:93 , :]
+df2_short = df2.iloc[70:93 , :]
+#df2_short = df2_short.assign(group=np.arange(len(df)) % 4 + 1 )
+
+sns.regplot(x = df_short.index,
+            y = 'AR',
+            data = df_short,
+            scatter=True)
+plt.show()
+
+sns.scatterplot(x = df2_short.index,
+            y = 'MD',
+            data = df2_short,
+            hue = 'group',
+            palette=palette
+            )
+plt.show()
+
+sns.scatterplot(x = df2_short.index,
+            y = 'AR',
+            data = df2_short,
+            hue = 'group',
+            palette=palette
+            )
+plt.show()
+
+
