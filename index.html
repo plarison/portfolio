@@ -3,99 +3,209 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Paul Larison - Student Portfolio</title>
+    <title>Paul's Portfolio Page</title>
     <meta name="description" content="Stuff I've done in school">
     <meta name="keywords" content="HTML, CSS"> <!-- Add tags as content increases -->
     <meta name="author" content="Paul Larison">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/style/studentportfolio.css">
+    <link rel="stylesheet" href="assets/style/portfolio.css">
 	
+	<!-- Font Import -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Quantico:wght@700&family=Roboto:ital,wght@0,400;0,700;1,400&family=Teko:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1 style="text-align:center;margin-top:50px;margin-botton:0;">Paul's Portfolio Page</h1>
-  <div id="container">
+	<div id="titlebox">
+		<h1 id="titletext">PAUL'S PORTFOLIO PAGE</h1>
+    </div>
+	
+	<div id="container">
         
 	<!-- NAVBAR -->
-	<div "width: 70%; margin: auto;">
-        <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Overview</button>
-            <button class="tablinks" onclick="openTab(event, 'Education')">Academic Achievements</button>
-            <button class="tablinks" onclick="openTab(event, 'Work')">Work Examples</button>
-            <button class="tablinks" onclick="openTab(event, 'Domain')">Job Experience/Domain Knowledge</button>
-            <button class="tablinks" onclick="openTab(event, 'Contact')">Contact/Resume</button>
-        </div>
+    <div class="navbar-wrapper">
+      <div class="navbar-placeholder">
+	  </div>
+		<div class="navbar">
+			<div class="tab">
+				<button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Overview</button>
+				<button class="tablinks" onclick="openTab(event, 'Education')">Academic Achievements</button>
+				<button class="tablinks" onclick="openTab(event, 'Work')">Work Examples</button>
+				<button class="tablinks" onclick="openTab(event, 'Domain')">Job Experience/Domain Knowledge</button>
+				<button class="tablinks" onclick="openTab(event, 'Contact')">Contact/Resume</button>
+			</div>
+		</div>
 	</div>
+	
 
         <!-- HOME -->
     <div id="Home" class="tabcontent">
         <div>
-			<h1>About Me</h1>
-			<img src="https://plarison.github.io/portfolio/assets/images/mugshot.jpg" alt="A picture of Paul" style="float:left;width:150px;height:200px;padding:20px;">
-			<p>Hello, I'm Paul Larison. I recently completed a Master's degree in Data Science, and I am currently progressing through Google's Machine Learning Engineer Learning Path to fortify my skills. My goal is to bring a well-rounded perspective to enterprise-level projects, leveraging the latest advancements in machine learning to drive impactful business outcomes.</p>
-			<p>You might be wondering why I'm looking for a data science job when I was a perfectly competent sysadmin.  The answer is that I'm attracted to complicated rulesets and I'm tired of playing video games.  I like tinkering with and optimizing complex systems, whether it's an online game like EvE Online or a tabletop like Shadowrun. Data science, and especially machine learning, allows me to scratch the same itch with two major advantages:
-			<ul>
-				<li>It's more complex than any game ever conceived.  No matter how good I get, there will always be more to learn and discover.</li>
-				<li>I can do it at work, which makes wasting my life away in front of a screen a lot less tempting when I have free time.</li>
-			</ul>
-			</p>
-		</div>
-		<div>
-			<h2>Skills and Interests</h2>
-			<div class="container">	
-			  <ul>
-				<li>SQL</li>
-				<li>Python</li>
-				<li>Java</li>
-				<li>Javascript</li>
-				<li>Python</li>
-				<li>R</li>
-				<li>Powershell</li>
-				<li>VBA</li>
-				<li>Excel</li>
-				<li>Tableau</li>
-				<li>Power BI</li>
-				<li>Google Cloud Platform</li>
-				<li>Microsoft</li>
-				<li>Linux</li>
-			  </ul>
+			<div>
+				<h1>ABOUT ME</h1>
+				<table>
+				  <tr>
+					<td width="20%">
+						<img src="./assets/images/mugshot.jpg" alt="A picture of Paul" class="mugshot">
+					</td>
+					<td>
+						<p style="font-size:1.5em;padding-right:20px;">Hello, I'm Paul Larison. I recently completed a Master's degree in Data Science, and I am currently progressing through Google's Machine Learning Engineer Learning Path to fortify my skills. My goal is to bring a well-rounded perspective to enterprise-level projects, leveraging the latest advancements in machine learning to drive impactful business outcomes.</p>
+					</td>
+				  </tr>
+				</table>
 			</div>
-		</div>	
-    </div>  <!-- ADD SKILLS, DOMAINS AND MAYBE GOALS -->
+			<div>
+				<table>
+				<h2 style="padding-top:10px;">A NEW JOURNEY</h2>
+				  <tr>
+					<td>
+						<p style="padding:10px 20px 0;">You might be wondering why I'm looking for a data science job when I was a perfectly competent sysadmin. The short answer is that I enjoy it more. More specifically, I have learned that I'm attracted to complicated rulesets and systems, which is why I enjoy complex games and why my favorite part of system administration was designing and implementing new projects. Data science, and especially machine learning, allows me to scratch the same itch with a few major advantages:
+						<ul style="padding:0px 8%;font-size:1em;">
+							<li>Data science is about utilizing data to discover and find value in new knowledge. 
+								<ul class="sublist"><li>System Administration is mostly the art of making disparate products made by different companies work together.</li></ul>
+							<li>Data science can generate revenue for the company.  
+								<ul class="sublist"><li>System administration is always overhead.</li></ul>
+							<li>Data scientists must collaborate, communicate, and learn as much as possible about the business.   
+								<ul class="sublist"><li>No one thinks about the sysadmins unless something breaks, which means they are incentivized to avoid notice. This means that data science is better for my emotional health.</li></ul>
+							<li>Data science still has a need for The Troubleshooter, and that's me.  
+								<ul class="sublist"><li> From my first teenage job at McDonald's, through my career as a sysadmin, and into grad school, I have consistently developed a reputation for successfully handling unusual problems.</li></ul>
+							<li>Data science is more complex than anything I have done before.  
+								<ul class="sublist"><li> This makes me feel like I'm progressing and improving as a human.</li></ul>
+							<li>Data science provides tools to increase my personal understanding of the world.  
+								<ul class="sublist"><li> System administrators also require continuous learning, but the new knowledge tends to be limited to in-depth information about specific computer programs.</li></ul>
+							<li>Data science allows for and rewards creative solutions to the problems it poses.  
+								<ul class="sublist"><li> System administration requires rigid adherence to established best practices in order to demonstrate due diligence when something inevitably goes wrong.</li></ul>
+							<li>Data science can still utilize my previous experience as domain knowledge.</li>  
+								<ul class="sublist"><li>I've gotten a few years out of date while pursuing my degree, but the underlying concepts haven't changed.</li></ul>
+						  </ul>
+						</p>
+					</td>
+				  </tr>
+				</table>
+				<h2 style="padding-top:10px;">SKILLS & INTERESTS</h2>
+				<table id="skilltable">
+				    <tr>
+					    <td style="border-right: 1px solid #191417;">
+							<b>Google Cloud Platform</b>
+							<ul style="margin-top:0;">
+								<li>Vertex AI</li>
+								<li>AutoML</li>
+								<li>Custom Models</li>
+								<li>Compute Engine</li>
+								<li>Cloud Storage</li>
+								<li>BigQuery</li>
+								<li>Dataprep</li>
+								<li>Pub/Sub</li>
+								<li>Dataflow</li>
+								<li>Deployment Manager</li>
+								<li>Colab</li>
+							</ul>
+						</td>
+						<td style="border-right: 1px solid #191417;">
+							<b>Python</b>
+							<ul style="margin-top:0;">
+								<li>NumPy </li>
+								<li>pandas </li>
+								<li>scikit-learn</li>
+								<li>TensorFlow </li>
+								<li>Keras </li>
+								<li>PyTorch </li>
+								<li>Matplotlib </li>
+								<li>Seaborn</li>
+								<li>Hugging Face Transformers</li>
+								<li>XGBoost/LightGBM/Etc</li>
+								<li>Optuna </li>
+								<li>NLTK </li>
+							</ul>
+						</td>
+						<td style="border-right: 1px solid #191417;">
+							<b>SQL</b>
+							<ul style="margin-top:0;">
+								<li>SQL Query Writing and Optimization</li>
+								<li>Data Mining</li>
+								<li>Reporting</li>
+								<li>Stored Procedures and Functions</li>
+								<li>Data Import/Export</li>
+								<li>Transactions and ACID Principles</li>
+								<li>Database Design</li>
+								<li>Database Hardware</li>
+								<li>Database Administration</li>
+							</ul>
+						</td>
+						<td>
+							<b>Other Languages</b>
+							<ul style="margin-top:0;">
+								<li>Java</li>
+								<li>Javascript</li>
+								<li>R</li>
+								<li>Powershell</li>
+								<li>VBA</li>
+							</ul>
+							<b>Other Tools</b>
+							<ul style="margin-top:0;">
+								<li>Excel</li>
+								<li>Tableau</li>
+								<li>Power BI</li>
+								<li></li>
+							</ul>
+						</td>
+				    </tr>
+				</table>
+			</div>
+		</div>
+    </div> 
 
     <!-- EDUCATION -->
-    <div id="Education" class="tabcontent">
-	  <h1>Academic Achievements</h1>
+    <div id="Education" class="tabcontent" style="padding-bottom: 10px">
+	  <h1>ACADEMIC ACHIEVEMENTS</h1>
 	  <div class="grid">
 		  <div class="grid-item">
-			<b>University of Arkansas Little Rock, Graduate</b>
-			<br>Fall 2022 - Summer 2023
-			<br>Graduate GPA: 3.80
-			<br>MS in Information Science
-			<br>Graduate certificate in Data Science
-			<br>Graduate certificate in Business Analytics
+			<div class="boxtitle" style="padding:4px 0">
+				<b>UNIVERSITY OF ARKANSAS LITTLE ROCK, GRADUATE</b>
+			</div>
+			<i>Fall 2022 - Summer 2023</i>
+			<ul>
+				<li>Graduate GPA: 3.80</li>
+				<li>MS in Information Science</li>
+				<li>Graduate certificate in Data Science</li>
+				<li>Graduate certificate in Business Analytics</li>
+			</ul>
 		  </div>	
 		  <div class="grid-item">
-			<b>University of Arkansas Little Rock, Undergraduate</b>
-			<br>Fall 2020 - Spring 2022
-			<br>Undergraduate GPA: 3.91
-			<br>BS in Information Science
-			<br>Chancellor's List, Fall 2020, Fall 2021
-			<br>Dean's List: Fall 2020, Spring 2021, Fall 2021, Spring 2022
+			<div class="boxtitle" style="padding:4px 0">
+				<b>UNIVERSITY OF ARKANSAS LITTLE ROCK, UNDERGRADUATE</b>
+			</div>
+			<i>Fall 2020 - Spring 2022</i>
+			<ul>
+				<li>Undergraduate GPA: 3.91</li>
+				<li>BS in Information Science</li>
+				<li>Chancellor's List, Fall 2020, Fall 2021</li>
+				<li>Dean's List: Fall 2020, Spring 2021, Fall 2021, Spring 2022</li>
+			</ul>
 		  </div>
 		  <div class="grid-item">
-			<b>University of Arkansas Community College at Morrilton</b>
-			<br>Fall 2007 - Spring 2009
-			<br>Honor Graduate, 3.53 GPA
-			<br>AAS in Computer Information Systems
-			<br>2-year president of the Computer Club
+			<div class="boxtitle" style="padding:4px 0">
+				<b>UNIVERSITY OF ARKANSAS COMMUNITY COLLEGE AT MORRILTON</b>
+			</div>
+			<i>Fall 2007 - Spring 2009</i>
+			<ul>
+				<li>Honor Graduate, 3.53 GPA</li>
+				<li>AAS in Computer Information Systems</li>
+				<li>2-year president of the Computer Club</li>
+			</ul>
 		  </div>
 		  <div class="grid-item">
-			<b>Online Training</b>
-			<br>Google Cloud Skills Boost
-			<br><a target="_blank" href="https://www.cloudskillsboost.google/public_profiles/a321c684-77ed-4621-87ee-27abd3faaece">Google Badges</a>
-			<br>IBM's CognitiveClass.ai 
-			<br><a target="_blank" href="https://www.credly.com/users/paul-larison/badges">Credly Badges</a>
+			<div class="boxtitle" style="padding:4px 0">
+				<b>ONLINE TRAINING</b>
+			</div>
+			<i>Ongoing</i>
+			<ul>
+			<li>Google Cloud Skills Boost (Machine Learning Engineer)
+				<li><a target="_blank" href="https://www.cloudskillsboost.google/public_profiles/a321c684-77ed-4621-87ee-27abd3faaece" style="text-align:center;">View Google Badges</a></li>
+				<li>IBM's CognitiveClass.ai 
+				<li><a target="_blank" href="https://www.credly.com/users/paul-larison/badges">View Credly Badges</a></li>
+			</ul>
 		  </div>
 		</div>
     </div>
@@ -104,198 +214,245 @@
     <div id="Work" class="tabcontent">
 	  <h1>Work Examples</h1>
 		<div id="MachineLearning">
-		  <h3>Machine Learning</h3>
-		  <div class="in-project" id="modelcomparison"  onmouseover="openModelCompare()">
-			<h4>Model Comparison</h4>
-			<div class="projectdetails">
-				<p>My Master's Project compared the performance of XGBoost and RoBERTa for detecting botnet traffic.  The results were in line with what my research led me to expect, which is that XGBoost did slightly better while taking a lot less time.  My primary goal was to get more practice with both traditional and deep learning algorithms.</p>
-				<a target="_blank" href="./projects/botnet/MastersProjectPaper.pdf">View Paper</a>
-				<br>
-				<a target="_blank" href="https://drive.google.com/drive/folders/1PtNdZrD_BnEROcVM3bBQGd6PQ4udc_yW?usp=sharing">View Code on Colab</a>
+			<div class="boxtitle">
+				<h2>Machine Learning</h2>
 			</div>
-		  </div>	
+			<div class="whitebox">
+				<h3 class="project-title">Model Comparison</h3>
+				<div class="project-details">
+					<p>My Master's Project compared the performance of XGBoost and RoBERTa for detecting botnet traffic.  The results were in line with what my research led me to expect, which is that XGBoost did slightly better while taking a lot less time.  My primary goal was to get more practice with both traditional and deep learning algorithms.</p>
+					<a target="_blank" href="./projects/botnet/MastersProjectPaper.pdf">View Paper</a>
+					<a target="_blank" href="https://drive.google.com/drive/folders/1PtNdZrD_BnEROcVM3bBQGd6PQ4udc_yW?usp=sharing">View Code on Colab</a>
+				</div>
+			</div>	
 		</div> 
 
 		<div id="PrivacySecurity">
-		  <h3>Privacy & Security</h3>
-		  <div class="in-project">
-			<h4>Privacy Presentation</h4>
-			<p>The semester project for my Data Protection and Privacy course was to create a Privacy Impact Assessment for a fictitious drone-based delivery company, along with a one-year plan based on the results of that assessment.  I also responded to pair of hypothetical breach scenarios.</p>
-			<a target="_blank" href="./projects/privacy/privacypresentation.mp4">View Project</a>
-		  </div>
+			<div class="boxtitle">
+				<h2>Privacy & Security</h2>
+			</div>
+		    <div class="whitebox">
+				<h3 class="project-title">Privacy Presentation</h3>
+				<div class="project-details">
+					<p>The semester project for my Data Protection and Privacy course was to create a Privacy Impact Assessment for a fictitious drone-based delivery company, along with a one-year plan based on the results of that assessment.  I also responded to pair of hypothetical breach scenarios.</p>
+					<a target="_blank" href="./projects/privacy/privacypresentation.mp4">View Project</a>
+				</div>
+		    </div>
 		</div> 
 
 		<div id="Statistics">
-		  <h3>Statistics</h3>
-		  <div class="in-project">
-			<h4>Spotify Analysis</h4>
-			<p>I chose to analyze a Spotify dataset for my advanced statistics course, because music is (almost) always fun.  Most of the paper is python output and the associated code.</p>
-			<a target="_blank" href="./projects/stats/spotifystats.pdf">View Project</a>
-		  </div>
+			<div class="boxtitle">
+				<h2>Statistics</h2>
+			</div>
+		    <div class="whitebox">
+				<h3 class="project-title">Spotify Analysis</h3>
+				<div class="project-details">
+					<p>I chose to analyze a Spotify dataset for my advanced statistics course, because music is (almost) always fun.  Most of the paper is python output and the associated code.</p>
+					<a target="_blank" href="./projects/stats/spotifystats.pdf">View Project</a>
+				</div>
+			</div>
 		</div> 
 		
 		
 		<div id="Database">
-		  <h3>Database</h3>
-		  <div class="in-project">
-			<h4>Data Analysis Semester Project</h4>
-			<p>This report uses data from Microsoft's AdventureWorks training database, but it's really about the skills that I developed and practiced along the way.</p>
-			<a target="_blank" href="./projects/sql/report.pdf">View Project</a>
-			<p>This is the T-SQL query that goes along with the above report.</p>
-			<a target="_blank" href="./projects/sql/query.pdf">View SQL</a>
-		  </div>
-		  <div class="in-project">
-			<h4>Database Design Project</h4>
-			<p>This paper contains diagrams and SQL for creating a simple bid database for a construction company.  It was inspired by a database I used to work with that desperately needed to be cleaned up, and finally got the chance to at least pretend to fix it.</p>
-			<a target="_blank" href="./projects/dbdesign/bid_db.pdf">View Project</a>
-		  </div>
+			<div class="boxtitle">
+				<h2>Database</h2>
+			</div>
+		    <div class="whitebox">
+				<h3 class="project-title">Data Analysis Semester Project</h3>
+				<div class="project-details">
+					<p>This report uses data from Microsoft's AdventureWorks training database, but it's really about the skills that I developed and practiced along the way.</p>
+					<a target="_blank" href="./projects/sql/report.pdf">View Project</a>
+					<p>This is the T-SQL query that goes along with the above report.</p>
+					<a target="_blank" href="./projects/sql/query.pdf">View SQL</a>
+				</div>
+				<h3 class="project-title">Database Design Project</h3>
+				<div class="project-details">
+					<p>This paper contains diagrams and SQL for creating a simple bid database for a construction company.  It was inspired by a database I used to work with that desperately needed to be cleaned up, and finally got the chance to at least pretend to fix it.</p>
+					<a target="_blank" href="./projects/dbdesign/bid_db.pdf">View Project</a>
+				</div>
+		    </div>
 		</div> 
 
 		<div id="WebTech">
-		  <h3>Web Technologies</h3>
-		  <div class="in-project">
-			<h4>Music Database Site</h4>
-			<p>My senior capstone project was a website intended to showcase the musical contributions of Arkansans.  Since there aren't that many, it mostly showcases my Javascript and ability to use an API.</p>
-			<a target="_blank" href="./projects/musicdb">View Project</a>
-		  </div>
-		  <div class="in-project">
-			<h4>This Website</h4>
-			<p>A little bit of CSS, a little bit of javascript.  It's gradually getting fancier as the job hunt progresses.</p>
-		  </div>
+			<div class="boxtitle">
+				<h2>Web Technologies</h2>
+			</div>
+		    <div class="whitebox">
+				<h3 class="project-title">Music Database Site</h3>
+				<div class="project-details">
+					<p>My senior capstone project was a website intended to showcase the musical contributions of Arkansans.  Since there aren't that many, it mostly showcases my Javascript and ability to use an API.</p>
+					<a target="_blank" href="https://plarison.github.io/AMDB/">View Project</a>
+				</div>
+				<h3 class="project-title">This Website</h3>
+				<div class="project-details">
+					<p>A little bit of CSS, a little bit of javascript.  It's gradually getting fancier as time goes on.  My next goal is to create a mobile version.</p>
+				</div>
+		    </div>
 		</div> 		
 		
 					  
 		<div id="AnalysisDesign">
-		  <h3>Analysis and Design</h3>
-		  <div class="in-project">
-			<h4>Capstone Project Analysis</h4>
-			<p>Before building the music database site, we spent a semester planning it.  This is the final report.</p>
-			<a target="_blank" href="./projects/musicdb/capstonereport.pdf">View Project</a>
-		  </div>
-		  <div class="in-project">
-			<h4>Baggage System</h4>
-			<p>This was the final project for a Systems Analysis and Design course.  I find baggage systems interesting partly because they're a bit like a physical version of a computer network.</p>
-			<a target="_blank" href="./projects/baggage/baggage.pdf">View Project</a>
-		  </div>
+			<div class="boxtitle">
+				<h2>Analysis and Design</h2>
+			</div>
+		    <div class="whitebox">
+				<h3 class="project-title">Capstone Project Analysis</h3>
+				<div class="project-details">
+					<p>Before building the music database site, we spent a semester planning it.  This is the final report.</p>
+					<a target="_blank" href="./projects/musicdb/capstonereport.pdf">View Project</a>
+				</div>
+				<h3 class="project-title">Baggage System</h3>
+				<div class="project-details">
+					<p>This was the final project for a Systems Analysis and Design course.  I find baggage systems interesting partly because they're a bit like a physical version of a computer network.</p>
+					<a target="_blank" href="./projects/baggage/baggage.pdf">View Project</a>
+				</div>
+		    </div>
 		</div> 
     </div>
       
 	<!--JOBS AND DOMAIN-->
 	<div id="Domain" class="tabcontent">
 		<h1>Job Experience</h1>
-		<div>
-		  <h2>Information Systems Administrator - Koontz Electric Company, Inc</h2>
-		  <p>2009-2018</p>
-		  <ul>
-			<li>Managed IT infrastructure for a specialty electrical construction contractor with 140 employees</li>
-			<li>Responsible for connectivity and information security for 3 office buildings and dozens of remote workers at a variety of job sites around the country</li>
-			<li>Responsible for security, consistency and stability of various databases, including Microsoft SQL and Pervasive</li>
-			<li>Designed and implemented custom front ends for those databases using MS Access</li>
-			<li>Planned and implemented numerous IT projects, ranging from server clusters to VoIP systems</li>
-			<li>Managed cloud services and storage including Amazon Web Services and Google Compute</li>
-			<li>Assisted in the creation and maintenance of the Disaster Recovery Plan</li>
-			<li>Responsible for day-to-day end user support </li>
-		  </ul>
+		<div class="boxtitle">
+			<h2>IT Generalist</h2>
 		</div>
-		<div>
-			<h2>Retail</h2>
-			<div>
-			  <h2>TLE Support Manager - Walmart</h2>
-			  <p>2006-2009</p>
+		<div class="whitebox">
+			<h3 class="project-title" style="font-size:1.3em">Information Systems Administrator - Koontz Electric Company, Inc</h3>
+			<div  class="project-details">
+			<p style="margin-top:0;">2009-2018</p>
 			  <ul>
-				<li>Started as a cart collector and worked my way up to an hour supervisor position</li>
-				<li>Responsible for both the tire and lube shop and for the automotive section of the sales floor</li>
-				<li>Responsible for troubleshooting and resolving any problems the techs couldn't handle</li>
-				<li>Responsible for supervising a department with about 20 associates</li>
-				<li>Responsible for customer service, support and complaint resolution</li>
-				<li>Responsible for tracking associate and sales performance</li>
+				<li>Managed IT infrastructure for a specialty electrical construction contractor with 140 employees</li>
+				<li>Responsible for connectivity and information security for 3 office buildings and dozens of remote workers at a variety of job sites around the country</li>
+				<li>Responsible for security, consistency and stability of various databases, including Microsoft SQL and Pervasive</li>
+				<li>Designed and implemented custom front ends for those databases using MS Access</li>
+				<li>Planned and implemented numerous IT projects, ranging from server clusters to VoIP systems</li>
+				<li>Managed cloud services and storage including Amazon Web Services and Google Compute</li>
+				<li>Assisted in the creation and maintenance of the Disaster Recovery Plan</li>
+				<li>Responsible for day-to-day end user support </li>
 			  </ul>
+		    </div>
+		</div>
+		<div class="boxtitle">
+			<h2>Retail/Automotive</h2>
+		</div>
+		<div class="whitebox">
+			<h3 class="project-title" style="font-size:1.3em">TLE Support Manager - Walmart</h3>
+			<div  class="project-details">
+				<p style="margin-top:0;">2006-2009</p>
+				<ul>
+					<li>Started as a cart collector and worked my way up to an hourly supervisor position</li>
+					<li>Responsible for both the tire and lube shop and for the automotive section of the sales floor</li>
+					<li>Responsible for troubleshooting and resolving any problems the techs couldn't handle</li>
+					<li>Responsible for supervising a department with about 20 associates</li>
+					<li>Responsible for customer service, support and complaint resolution</li>
+					<li>Responsible for tracking associate and sales performance</li>
+				</ul>
 			</div>
 		</div>
-		<h1>Hobbies & Interests</h1>
-		<p>I like trying new hobbies.  I'm always very into it for a few months, but most of them fall to the wayside.  The interests listed below are the ones that have 
-		</p>
-		<div>
+		
+		
+	<h1>Hobbies & Interests</h1>
+		<div class="boxtitle">
 			<h2>Competent Amateur</h2>
-			<div>
-				<h3>Music</h3>
+		</div>
+		<div class="whitebox">
+			<div class="project-details">
+				<h3 class="project-title">Music</h3>
 				<p>Music is my favorite hobby, and my oldest.  I enjoy playing (and sometimes composing) music, and I am comfortable with music theory. I play guitar and bass with at a reasonable level of competence, and I also sing a bit. The bass guitar has become my preferred instrument in recent years, but I still play my favorite 6-string on a regular basis.  I also dabble in mandolin and harmonica. 
 				</p>
 			</div>
-			<div>
-				<h3>Cooking</h3>
+			<div  class="project-details">
+				<h3 class="project-title">Cooking</h3>
 				<p>I've been putting effort into cooking on and off for around 5 years now.  I like playing with food, as it's essentially chemistry that I can eat.  I want to understand the role of each ingredient in a recipe, so I can adjust it and refine it and make the dish my own. Sometimes the experimenting results in emergency pizza orders, but on the whole our diet is much tastier, healthier and cheaper than it once was.
 				</p>
 			</div>
-			<div>
-				<h3>Table Top Games</h3>
+			<div  class="project-details">
+				<h3 class="project-title">Table Top Games</h3>
 				<p>I like tabletop games because they're social.  I'm usually the host.  Depending on my guests, I'll play anything from Sorry! (the classic edition, please) to Catan to Pathfinder.  When we play long-running RPGs I'm the ForeverDM.  I don't consider myself to be the greatest game master, but I always have plenty of players.
 				</p>
 			</div>
-			<h2>Working On It</h2> 
-				<h3>Fitness/Biohacking</h3>
+		</div>
+		<div class="boxtitle">
+			<h2>Working On It</h2>
+		</div>
+		<div class="whitebox">
+			<div class="project-details">
+				<h3 class="project-title">Fitness/Biohacking</h3>
 				<p>I've been paying more attention to my health.  It's an addictive hobby because I'm feeling great and I want to see how far I  can take that.  Cycling, hiking and swimming are my favorite fitness activities. I have recently realized that biohacking, which is generally portrayed as rich guys doing strange things, is actually just taking a data-driven approach to my own physical and emotional well-being.
 				</p>
 			</div>
-			<div>
-				<h3>Language</h3>
+			<div class="project-details">
+				<h3 class="project-title">Language</h3>
 				<p>I'm putting enough time into learning spanish for it to count as a hobby.  I have a 2-year streak on Duolingo and have advanced far enough that I'm now learning faster by reading along with spanish-language podcasts.  My goal is to achieve a professional level of fluency, at which point I will choose a new language to learn.
 				</p>
 			</div>
-			<div>
-				<h3>Children's Movies and Television</h3>
+			<div class="project-details">
+				<h3 class="project-title">Children's Movies and Television</h3>
 				<p>This was not intentional.  I restrict my children's streaming to the living room tv, because I should know what they are watching.  As I result I have seen a much larger volume of contemporary children's programming that I ever wanted to.
 				</p>
 			</div>
+		</div>
+		<div class="boxtitle">
 			<h2>Former Hobbies</h2>
-			<div>
-				<h3>Fishkeeping/Aquascaping</h3>
+		</div>
+		<div class="whitebox">
+			<div class="project-details">
+				<h3 class="project-title">Fishkeeping/Aquascaping</h3>
 				<p>This is a hobby about optimizing a system for the purpose of being pleasant to look at.  I still find it interesting, but it is both expensive and upkeep intensive.
 				</p>
 			</div>
-			<div>
-				<h3>Brewing</h3>
+			<div class="project-details">
+				<h3 class="project-title">Brewing</h3>
 				<p>This was the precursor to my cooking hobby.  The chemistry is more explicit and more patience is required.  The appeal of this has faded for me because I rarely drink alchohol any more.
 				</p>
 			</div>
-			<div>
-				<h3>Video Games</h3>
-				<p>Each person lives for a finite number of hours. I don't need to spend any more of mine playing video games, but I will happily work with video game data if that's what your company does.
+			<div class="project-details">
+				<h3 class="project-title">Video Games</h3>
+				<p>These are still fun, but I have decided that they consume too many life-hours without offering much in return.  I will still happily work with video game data if it's part of a job. 
 				</p> 
 			</div>
-			<h2>I Enjoy Reading About</h2>
-			<div>
-				<h3>Astronomy</h3>
-				<p>I have been fascinated by the cosmos since childhood.
+		</div>
+		<div class="boxtitle">
+			<h2>Nonfiction I Enjoy</h2>
+		</div>
+		<div class="whitebox">
+			<div class="project-details">
+				<h3 class="project-title">Astronomy</h3>
+				<p>I have been fascinated by the cosmos since childhood, and astronomy is heavily featured in my news feed.
 				</p>
 			</div>
-			<div>
-				<h3>Economics</h3>
-				<p>They call it "the dismal science", but I enjoy reading about all the trade-offs and interdependencies. 
+			<div class="project-details">
+				<h3 class="project-title">Economics</h3>
+				<p>They call it "the dismal science", but I enjoy reading about all the trade-offs and interdependencies.  I'd like to find more time to do my own analysis of economic data, as economists frequently disagree with each other. 
 				</p>
 			</div>
-			<h2>Future</h2>
-			<div>
-				<h3>Aviation</h3>
+		</div>
+		<div class="boxtitle">
+			<h2>Future Goal</h2>
+		</div>
+		<div class="whitebox">
+			<div class="project-details">
+				<h3 class="project-title">Aviation</h3>
 				<p>I will be pursuing a general aviation pilot's license as soon I have the income to support the hobby.
 				</p>
 			</div>
-			
 		</div>
-		
-    </div>
+	</div>	
 
 	<!-- CONTACT -->
 	<div id="Contact" class="tabcontent">
-		<div>
-			<h1>Contact Me</h1>
-			<p><b>Phone:</b> 501-215-0182</p>
-			<p><b>Email:</b> plarison2@gmail.com</p>
-			<p><b>LinkedIn:</b> <a target="_blank" href="https://www.linkedin.com/in/paul-larison"> www.linkedin.com/in/paul-larison</a></p>
+	<h1>Contact Me</h1>
+		<div class="whitebox" style="max-width:796px;margin:auto;margin-bottom:10px;">
+			<p style="padding-top:10px;"><b>Phone</b> <br> 501-215-0182</p>
+			<p><b>Email</b> <br> plarison2@gmail.com</p>
+			<p><b>LinkedIn</b> <br> <a target="_blank" href="https://www.linkedin.com/in/paul-larison"> www.linkedin.com/in/paul-larison</a></p>
 		</div>
-		<div>
+		<div class="iframe-container">
 			<h1>Resume</h1>
-			<iframe src="https://docs.google.com/document/d/e/2PACX-1vQMxSlUcrhop09tJLwyilLPImZE4yhFFytuvni2XBs4E9NeEP1OT4Qhngrn5tsfNt4YxyilFS9qC474/pub?embedded=true"></iframe>
+			<a href="https://docs.google.com/document/d/1LvyzjGD0N-ZAVmf03wq0q3BFNJys0UY6JTriKANTJpc/edit?usp=sharing">View on Google Docs</a>
+			<br>
+			<iframe id="frame-resume" src="https://docs.google.com/document/d/e/2PACX-1vQMxSlUcrhop09tJLwyilLPImZE4yhFFytuvni2XBs4E9NeEP1OT4Qhngrn5tsfNt4YxyilFS9qC474/pub?embedded=true"></iframe>
 		</div>
 	</div>    
   </div>
