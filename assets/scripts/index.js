@@ -1,5 +1,4 @@
-document.getElementById("defaultOpen").click();
-
+////FUNCTIONS////
 function openTab(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -14,6 +13,36 @@ function openTab(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
-function openRedirect(url) {
-    window.location.href = url;
+//not currently used
+//function openRedirect(url) {
+//    window.location.href = url;
+//}
+
+// Function to add or remove the "sticky" class to the navbar
+function toggleStickyNavbar() {
+  var navbar = document.querySelector(".navbar");
+  var navbarWrapper = document.querySelector(".navbar-wrapper");
+  var placeholder = document.querySelector(".navbar-placeholder");
+
+  if (window.pageYOffset >= navbarWrapper.offsetTop) {
+    navbar.classList.add("sticky");
+    placeholder.style.height = navbar.offsetHeight + "px";
+  } else {
+    navbar.classList.remove("sticky");
+    placeholder.style.height = "0";
+  }
 }
+
+
+///EVENTS///
+
+//Load default page//
+document.getElementById("defaultOpen").click();
+
+// Sticky navbar
+window.onscroll = function () {
+  toggleStickyNavbar();
+};
+toggleStickyNavbar();
+
+
