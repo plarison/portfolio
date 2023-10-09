@@ -1,0 +1,271 @@
+/* pallet
+borders #191417
+bigbox #f1f1f1
+background #e6f7ff
+navbar #80D6FF
+current tab #3E6099
+hover tab #607C9D
+*/
+
+/*fontnames
+font-family: 'Iceberg', sans-serif;
+font-family: 'Quantico', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Teko', sans-serif;
+
+*/
+
+/*  body */
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.1em;
+	background-color: #e6f7ff;
+	margin: 0;
+}
+
+h1, h2, h3, h4 {
+	text-align: center;
+    margin: 0;
+    padding: 0;
+	font-family: 'Quantico', sans-serif;
+}
+
+#titlebox {
+	width: 100%;
+	margin: 0;
+	background-color: #000000;
+	border-left: 3px solid #191417;
+	border-right: 3px solid #191417;
+}
+
+#titletext {
+	font-family: 'Iceberg', sans-serif;
+    /*font-weight: bold;*/
+	font-size: 3.3em;
+	color: #80D6FF;
+	margin: 20 0;
+}
+
+#container {
+	width: 1080px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0;
+	margin-bottom: 50px;
+	background-color: #f1f1f1;
+	border: 1px solid #191417;
+}
+
+
+#skilltable {
+	table-layout: fixed;
+}
+
+#skilltable td {
+	vertical-align: top;
+	padding: 10px;
+}
+
+.skillslist ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.skillslist li {
+  margin: 2px; 
+  font-size: 1em; 
+}
+
+p {
+	margin-bottom: 20px;
+	}
+
+#aboutme {
+	font-size: 1.5em;
+}
+.mugshot {
+	float: left;
+	width: 150px;
+    height: 200px;
+	padding: 10px 0px 20px 10px;
+}	
+
+.sublist {
+    list-style-type: none;
+	font-size: 0.9em;
+    font-style: italic;
+}
+	
+/* navbar */
+.navbar {
+    width: 100%;
+    margin: auto;
+}
+
+
+.navbar-wrapper {
+  position: relative;
+}
+
+.navbar-placeholder {
+  height: 0; /* Height equal to the navbar's height */
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 50%; /* Center the sticky navbar horizontally */
+  transform: translateX(-50%); /* Center the sticky navbar horizontally */
+  width: 1080px; /* Set the width to match the #container */
+  z-index: 100;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #191417;
+    background-color: #80D6FF;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+	padding: 0;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 16px;
+    transition: 0.3s;
+	font-family: 'Teko', sans-serif;
+    font-size: 1.5em;
+    flex-grow: 1;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #607C9D;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #3E6099;
+}
+
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 0px 12px;
+    border: 1px solid #3D5368;
+}
+
+.tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+table {
+    width: 94%;
+    margin: auto;
+	border: 1px solid #191417;
+	background-color: #fff;	
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* grid styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin-top: 0px;
+}
+
+.grid-item {
+  border: 1px solid #191417;
+  background-color: #fff;  
+}
+
+.grid-item b {
+	font-size: 1.2em;
+	margin-left: 10px;font-family: 'Teko', sans-serif;
+}
+
+.grid-item i {
+	font-size: .9em;
+	margin-left: 10px;
+}
+
+.grid-item a {
+	text-align: center;
+}
+
+/* Create Columns */
+	.split      	{ display:block;margin:10px;}
+	.split span 	{ display:block;float:right;width:50%;margin-left:10px;}
+	.split-wide      { display:block;margin:10px;}
+	.split-wide span { display:block;float:right;width:50%;margin-right:10px;text-align:right;}
+
+.whitebox {
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding: 10px;
+  padding-top: 0;
+  border: 1px solid #808080;
+  background-color: #fff;
+}
+
+.whitebox p {
+	margin: 10px;
+	margin-top: 0;
+    text-align: center;
+}
+
+.whitebox a {
+  text-align: center;
+  display: block;
+  margin: 0;
+}
+
+.boxtitle {
+	border: 1px solid #808080;
+	background-color: #80D6FF;
+	margin: 0;
+	padding: 10px 0;
+}
+
+.hobbydesc {
+	margin-top: 0;
+}
+
+.project-title {
+	background-color: #607C9D;
+	padding: 5px;
+	margin-top: 0;
+}
+
+.project-details {
+	border: 1px solid #607C9D;
+	padding-bottom: 6px;
+}
+
+.iframe-container {
+      text-align: center;
+    }
+
+.iframe-container iframe {
+      display: inline-block;
+}
+
+#frame-resume {
+	width: 796px;
+	height: 1384px;
+	margin: auto;
+}
